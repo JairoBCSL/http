@@ -19,6 +19,16 @@ app.post('/upload', multipartMiddleware, (req, res) => {
   res.json({ message: files });
 })
 
+app.get('/downloadJpg', (req, res) => {
+  res.download('./uploads/bmw.jpg');
+  //console.log('Jpg');
+});
+
+app.get('/downloadZip', (req, res) => {
+  res.download('./uploads/curso.zip');
+  //console.log('Zip');
+});
+
 app.use((err, req, res, next) => res.json({ error: err.message }));
 
 app.listen(8000, () => {

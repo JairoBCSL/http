@@ -69,4 +69,18 @@ export class UploadFileComponent implements OnInit {
     this.subs.unsubscribe();
   }
 
+  onDownloadJpg(){
+    this.service.download(environment.BASE_URL+'/downloadJpg')
+      .subscribe((res: any) => {
+        this.service.handleFile(res, 'bmw.jpg')
+      })
+  }
+
+  onDownloadZip(){
+    this.service.download(environment.BASE_URL+'/downloadZip')
+    .subscribe((res: any) => {
+      this.service.handleFile(res, 'curso.zip')
+    })
+  }
+
 }
