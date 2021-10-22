@@ -66,7 +66,7 @@ export class UploadFileComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    this.subs.unsubscribe();
+    //this.subs.unsubscribe();
   }
 
   onDownloadJpg(){
