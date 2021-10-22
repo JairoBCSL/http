@@ -33,7 +33,7 @@ export class LibSearchComponent implements OnInit {
       }
       
       this.results$ = this.http
-      .get(this.SEARCH_URL + '?fields=' + fields + '&search='+value)
+      .get(this.SEARCH_URL + '?fields='+params.fields+'&search='+params.search)
       .pipe(
         tap((res: any) => this.total = res.total),
         map(res => res.results),
